@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación de Boda</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<body>
+
+  <!-- Música de fondo -->
+<audio id="background-music" autoplay loop>
+  <source src="imagenes/Kurt, Tommy Torres - Vengo Del Futuro (Remix).mp3" type="audio/mp3">
+</audio>
+
+<!-- Botón para activar/desactivar la música con icono -->
+<div class="audio-control">
+  <button id="toggle-music" onclick="toggleMusic()">
+      <i id="music-icon" class="fas fa-volume-up"></i>
+  </button>
+</div>
+
+    <header>
+      <div class="header-content">
+          <p class="subtitulo">UNA NUEVA HISTORIA, NUESTRA BODA</p>
+          <h1 class="nombres">VALDIVIA</h1>
+          <h1 class="nombres">&</h1>
+          <h1 class="nombres">BALDERAS</h1>
+          <div id="countdown">
+              <div class="countdown-box">
+                  <span id="days">00</span>
+                  <p>Días</p>
+              </div>
+              <div class="countdown-box">
+                  <span id="hours">00</span>
+                  <p>Horas</p>
+              </div>
+              <div class="countdown-box">
+                  <span id="minutes">00</span>
+                  <p>Minutos</p>
+              </div>
+              <div class="countdown-box">
+                  <span id="seconds">00</span>
+                  <p>Segundos</p>
+              </div>
+          </div>
+      </div>
+  </header>
+  
+  <section id="special-phrase">
+    <div class="phrase-container">
+        <p class="special-phrase">
+            Hay momentos en la vida que son especiales por sí solos. Compartirlos con las personas que quieres los convierte en inolvidables.
+        </p>
+    </div>
+  </section>  
+
+    <!-- Sección de Ubicación -->
+<section class="locations">
+  <h2 class="locations-title">¿Dónde y cuándo?</h2>
+
+  <div class="location">
+      <h3><i class="fas fa-church"></i> Ceremonia</h3>
+      <p>Templo Parroquia San Pio X</p>
+      <img src="imagenes/templo.jpeg" alt="Templo Parroquia San Pio X">
+      <p><strong>📅 Día:</strong> Sábado 12 de abril de 2025 - 14:00 hrs</p>
+      <p><strong>📍 Dirección:</strong> Av. Principal #123, León, Guanajuato</p>
+      <a href="https://maps.app.goo.gl/MPguPT8enAfc3kQe9" 
+        class="btn-map" target="_blank">
+        Ver en el mapa
+        <span class="loader"></span>
+      </a>
+  </div>
+
+  <div class="location">
+      <h3><i class="fas fa-glass-cheers"></i> Recepción</h3>
+      <p>Salón Punta Arena</p>
+      <img src="imagenes/salon.jpeg" alt="Salón Punta Arena">
+      <p><strong>📅 Día:</strong> Sábado 12 de abril de 2025 - 16:30 hrs</p>
+      <p><strong>📍 Dirección:</strong> Calle Fiesta #456, León, Guanajuato</p>
+      <a href="https://maps.app.goo.gl/JZpxQP1f5CUnByT78" 
+        class="btn-map" target="_blank">
+        Ver en el mapa
+        <span class="loader"></span>
+      </a>
+  </div>
+</section>
+
+<!-- Confirmación de asistencia -->
+<div class="button-container">
+  <button class="button" onclick="window.location.href='https://wa.me/524774408833?text=Confirmo%20mi%20asistencia%20al%20evento'">
+    <div class="outline"></div>
+    <div class="state state--default">
+      <div class="icon">
+        <svg
+          width="1em"
+          height="1em"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g style="filter: url(#shadow)">
+            <path
+              d="M14.2199 21.63C13.0399 21.63 11.3699 20.8 10.0499 16.83L9.32988 14.67L7.16988 13.95C3.20988 12.63 2.37988 10.96 2.37988 9.78001C2.37988 8.61001 3.20988 6.93001 7.16988 5.60001L15.6599 2.77001C17.7799 2.06001 19.5499 2.27001 20.6399 3.35001C21.7299 4.43001 21.9399 6.21001 21.2299 8.33001L18.3999 16.82C17.0699 20.8 15.3999 21.63 14.2199 21.63ZM7.63988 7.03001C4.85988 7.96001 3.86988 9.06001 3.86988 9.78001C3.86988 10.5 4.85988 11.6 7.63988 12.52L10.1599 13.36C10.3799 13.43 10.5599 13.61 10.6299 13.83L11.4699 16.35C12.3899 19.13 13.4999 20.12 14.2199 20.12C14.9399 20.12 16.0399 19.13 16.9699 16.35L19.7999 7.86001C20.3099 6.32001 20.2199 5.06001 19.5699 4.41001C18.9199 3.76001 17.6599 3.68001 16.1299 4.19001L7.63988 7.03001Z"
+              fill="currentColor"
+            ></path>
+            <path
+              d="M10.11 14.4C9.92005 14.4 9.73005 14.33 9.58005 14.18C9.29005 13.89 9.29005 13.41 9.58005 13.12L13.16 9.53C13.45 9.24 13.93 9.24 14.22 9.53C14.51 9.82 14.51 10.3 14.22 10.59L10.64 14.18C10.5 14.33 10.3 14.4 10.11 14.4Z"
+              fill="currentColor"
+            ></path>
+          </g>
+          <defs>
+            <filter id="shadow">
+              <fedropshadow
+                dx="0"
+                dy="1"
+                stdDeviation="0.6"
+                flood-opacity="0.5"
+              ></fedropshadow>
+            </filter>
+          </defs>
+        </svg>
+      </div>
+      <p>Confirmar asistencia</p>      
+    </div>
+  </button>
+</div>
+
+
+  </div>
+    <section id="dress-code">
+          <h2>Código de vestimenta</h2>
+          <h3>Formal</h3>
+          <div class="dress-icons">
+          <div class="dress-item">
+              <i class="fas fa-user-tie"></i>
+          </div>
+          <div class="dress-item">
+              <img src="imagenes/vestido.png" alt="Vestido Formal">
+          </div>
+    </div>
+  
+
+      <!-- Carrusel de fotos -->
+      <section id="gallery">
+        <h2>Gracias a Dios por ponerte en mi camino</h2>
+        <div class="carousel-container">
+            <div class="carousel">
+                <img src="imagenes/C9.jpg" alt="Foto 1">
+                <img src="imagenes/C2.jpg" alt="Foto 2">
+                <img src="imagenes/C5.jpg" alt="Foto 3">
+                <img src="imagenes/C10.jpeg" alt="Foto 4">    
+                <img src="imagenes/C6.jpg" alt="Foto 5">
+                <img src="imagenes/C7.PNG" alt="Foto 6">
+                <img src="imagenes/C8.jpeg" alt="Foto 7">
+                <img src="imagenes/C1.jpg" alt="Foto 8">  
+                <img src="imagenes/C11.png" alt="Foto 9">   
+                <img src="imagenes/C12.png" alt="Foto 10">   
+
+            </div>
+            <!-- Botones de navegación del carrusel -->
+            <button class="carousel-button prev">‹</button>
+            <button class="carousel-button next">›</button>
+        </div>
+    </section>
+
+    <section id="videos">
+      <h2>🎥 Momentos especiales</h2>
+      <div class="video-container">
+          <video autoplay loop muted playsinline>
+              <source src="imagenes/V2.mp4" type="video/mp4">
+              Tu navegador no soporta videos.
+          </video>
+          <video autoplay loop muted playsinline>
+              <source src="imagenes/V1.mp4" type="video/mp4">
+          </video>
+
+        <video autoplay loop muted playsinline>
+              <source src="imagenes/V3.mp4" type="video/mp4">
+          </video>
+        <video autoplay loop muted playsinline>
+              <source src="imagenes/V4.mp4" type="video/mp4">
+          </video>
+      </div>
+  </section>
+
+  <section id="parents">
+    <h2>Con la bendición de Dios, nuestros Padres</h2>
+    <div class="parents-container">
+        <div class="parents-group">
+            <h3>Padres de la novia</h3>
+            <p>Cecilia Alcalá</p>
+            <p>Jesús Balderas</p>
+        </div>
+        <div class="parents-group">
+            <h3>Padres del novio</h3>
+            <p>Estela García</p>
+            <p>Adolfo Valdivia</p>
+        </div>
+    </div>
+    <p class="special-thank">¡Gracias por acompañarnos en este día tan especial!</p>
+  </section>
+  
+
+  <!-- Footer -->
+  <footer>
+    <h3>“Y todo lo que hagan,
+      háganlo con amor.”</h3>
+      <h3> Corintios 16:14 </h3>
+      <h4>Valdivia & Balderas</h4>
+  </footer>
+
+</div>
+
+</body>
+<script src="script.js"></script>
+</html>
+
